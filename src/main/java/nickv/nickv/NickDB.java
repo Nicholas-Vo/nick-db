@@ -33,4 +33,8 @@ public final class NickDB extends JavaPlugin {
     @Override
     public void onDisable() {
     }
+
+    public DataSource getDataSource() {
+        return dataSource;
+    }
 }
