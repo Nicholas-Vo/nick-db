@@ -18,7 +18,6 @@ public class PointsManager {
     }
 
     public boolean addPoints(Player player, long amount) {
-        Log.info("LENGTH ----> " + player.getUniqueId().toString().length());
         try (Connection conn = connection; PreparedStatement stmt = conn.prepareStatement(
                 "INSERT INTO player_points(uuid, points) VALUES(?, ?) ON DUPLICATE KEY UPDATE points = points + ?;")) {
             stmt.setString(1, player.getUniqueId().toString());

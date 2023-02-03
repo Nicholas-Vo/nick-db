@@ -24,6 +24,7 @@ public class PlayerBreakBlock implements Listener {
     @EventHandler
     public void onBreakBlock(BlockBreakEvent e) {
         manager.addPoints(e.getPlayer(), 1);
+        e.getPlayer().sendMessage("You have " + manager.getPoints(e.getPlayer()) + " points.");
     }
 
 }
