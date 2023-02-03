@@ -1,5 +1,7 @@
 package nickv.nickv.db;
 
+import nickv.nickv.log.Log;
+import nickv.nickv.util.Utils;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.plugin.Plugin;
 
@@ -25,7 +27,7 @@ public class Database implements ConfigurationSerializable {
         port = (int) map.getOrDefault("port", "3306");
         database = (String) map.getOrDefault("database", "mysql");
         user = (String) map.getOrDefault("user", "root");
-        password = (String) map.getOrDefault("password", "passy");
+        password = (String) map.getOrDefault("password", Utils.getDatabasePassword());
     }
 
     public Database() {
@@ -33,7 +35,7 @@ public class Database implements ConfigurationSerializable {
         port = 3306;
         database = "mysql";
         user = "root";
-        password = "passy";
+        password = Utils.getDatabasePassword();
     }
 
     @Override
@@ -90,6 +92,6 @@ public class Database implements ConfigurationSerializable {
             }
             conn.commit();
         }
-        plugin.getLogger().info("§2Database setup complete.");
+        Log.info("§2Database setup complete.");
     }
 }

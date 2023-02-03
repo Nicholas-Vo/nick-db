@@ -1,4 +1,4 @@
 name: nick-db
 version: '${project.version}'
-main: nickv.nickv.Nickv
+main: nickv.nickv.NickDB
 api-version: 1.19

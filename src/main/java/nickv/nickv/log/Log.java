@@ -33,4 +33,8 @@ public class Log {
                 level, String.format("%s%nMessage: %s%nCode: %s%nState: %s",
                         message, ex.getMessage(), ex.getErrorCode(), ex.getSQLState()), ex);
     }
+
+    public static void info(String message) {
+        NickDB.getPlugin(NickDB.class).getLogger().log(Level.INFO, message);
+    }
 }

@@ -17,6 +17,7 @@
     </properties>
 
     <build>
+        <directory>${dir}</directory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
